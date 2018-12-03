@@ -3,6 +3,7 @@ FROM alpine:3.8
 
 RUN set -xe && \
     apk add --no-cache \
-    smartmontools python
+    smartmontools python && \
+    pip install pyyaml
 
 ENTRYPOINT ["/usr/sbin/smartd", "--debug"]
